@@ -1,5 +1,6 @@
 import React from 'react'
 import Radios from 'patchkit-radios'
+import t from 'patchwork-translations'
 
 export default class FlagMsgForm extends React.Component {
   constructor(props) {
@@ -23,9 +24,9 @@ export default class FlagMsgForm extends React.Component {
     return <div>
       <form className="inline" onSubmit={e=>e.preventDefault()}>
         <fieldset>
-          <h1><i className="fa fa-flag" /> Flag this Message</h1>
-          <div>{"Flagging hides unwanted/negative content. What's your reason for flagging this message?"}</div>
-          <Radios group="reason" options={[{ label: 'Spam', value: 'spam', defaultChecked: true }, { label: 'Abusive', value: 'abuse' }]} onChange={this.onChange.bind(this)} />
+          <h1><i className="fa fa-flag" /> {t('flag.FlagThisMsg')}</h1>
+          <div>{t('flag.FlagMsgInfo')}</div>
+          <Radios group="reason" options={[{ label: t('flag.Spam'), value: 'spam', defaultChecked: true }, { label: t('flag.Abusive'), value: 'abuse' }]} onChange={this.onChange.bind(this)} />
         </fieldset>
       </form>
     </div>
